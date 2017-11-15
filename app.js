@@ -1,9 +1,14 @@
+const express = require ('express')
+const bodyParser = require ('body-parser')
+const Sequelize = require('sequelize');
+
+const app = express(); 
+
 
 //=================
 //RESTAURANT MODEL 
 //=================
 
-const Sequelize = require('sequelize');
 const restaurant = new Sequelize('postgres://Cherie:@localhost:5432/restaurant');
 
 restaurant.authenticate().then(() => {
