@@ -1,3 +1,8 @@
+//=================
+//adding CONSTs
+//=================
+
+
 const express = require ('express')
 const bodyParser = require ('body-parser')
 const Sequelize = require('sequelize');
