@@ -64,7 +64,17 @@ const Restaurant = restaurant.define('restaurant', {
   });
 });
 
+// Restaurant.findAll().then(restaurants => {
+//   console.log(restaurants)
+// });
 
-Restaurant.findAll().then(restaurants => {
-  console.log(restaurants)
-});
+ app.get ('/restaurants', function(request, response){
+    Restaurant.findAll().then(restaurants => {
+      response.send(restaurants);
+    });
+ });
+
+
+app.listen(3000, () => {
+  console.log('Hi!! You are on port 3000!')
+})
