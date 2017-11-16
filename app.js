@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //RESTAURANT MODEL
 //=================
 
-const restaurant = new Sequelize('postgres://jantykojakali:@localhost:5432/restaurant');
+const restaurant = new Sequelize('postgres://@localhost:5432/restaurant');
 
 restaurant.authenticate().then(() => {
     console.log('Connection has been established successfully.');
