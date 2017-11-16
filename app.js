@@ -74,6 +74,18 @@ const Restaurant = restaurant.define('restaurant', {
     });
  });
 
+app.delete('/restaurants', function(req, res) {
+    return Restaurant.destroy({
+        where: {name: any}
+      })
+      .then(success => [
+        User.Restaurant().then(users => {
+            res.send(restaurants);
+        })
+
+      ])
+
+})
 
 app.listen(3000, () => {
   console.log('Hi!! You are on port 3000!')
