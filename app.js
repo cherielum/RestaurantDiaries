@@ -1,5 +1,5 @@
 //=================
-//adding CONSTs
+//Modules
 //=================
 
 
@@ -7,14 +7,15 @@ const express = require ('express')
 const bodyParser = require ('body-parser')
 const Sequelize = require('sequelize');
 
-const app = express(); 
+const app = express();
 
+app.use(bodyParser.json());
 
 //=================
-//RESTAURANT MODEL 
+//RESTAURANT MODEL
 //=================
 
-const restaurant = new Sequelize('postgres://Cherie:@localhost:5432/restaurant');
+const restaurant = new Sequelize('postgres://jantykojakali:@localhost:5432/restaurant');
 
 restaurant.authenticate().then(() => {
     console.log('Connection has been established successfully.');
@@ -64,15 +65,28 @@ const Restaurant = restaurant.define('restaurant', {
   });
 });
 
-// Restaurant.findAll().then(restaurants => {
-//   console.log(restaurants)
-// });
+//=================
+//ROUTES
+//=================
 
- app.get ('/restaurants', function(request, response){
-    Restaurant.findAll().then(restaurants => {
-      response.send(restaurants);
-    });
- });
+app.get ('/restaurants', function(request, response){
+  Restaurant.findAll().then(restaurants => {
+    response.send(restaurants);
+  });
+});
+
+app.put ('/restaurants/:id', function(request, response){
+  let restaurantId = Number(request.params.id)
+
+  Restaurant.findById(restaurantId)
+  .then(restaurant => {
+    restaurant.update(request.body, { fields: Object.keys(request.body) })
+    .then(() => response.status(202).send(restaurant))
+    .catch((error) => response.status(400).send("Looks like there was an error updating the restaurant! + " + error))
+  })
+  .catch((error) => response.status(404).send('Sorry! Restaurant not found! ' + error));
+
+});
 
 
 app.listen(3000, () => {
