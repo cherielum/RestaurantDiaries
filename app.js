@@ -48,6 +48,15 @@ const Restaurant = restaurant.define('restaurant', {
     },
      cleanBathroom: {
       type: Sequelize.BOOLEAN
+    },
+    city: {
+      type: Sequelize.STRING
+    },
+    state: {
+      type: Sequelize.STRING
+    }
+    zipcode: {
+      type: Sequelize.STRING
     }
   });
 
@@ -61,7 +70,10 @@ const Restaurant = restaurant.define('restaurant', {
     category: 'Fast Casual',
     type: 'Mexican',
     lastVisted: '2017-11-13',
-    cleanBathroom: true
+    cleanBathroom: true,
+    city: 'Atlanta',
+    state: 'GA',
+    zipcode: '30326'
   });
 });
 
