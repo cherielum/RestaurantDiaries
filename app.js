@@ -102,7 +102,7 @@ app.delete('/restaurants', function(req, res) {
 })
 
 app.delete('/restaurants:uid', function(req, res) {
-    let restaurantId = Number(request.params.id)
+    let restaurantId = Number(req.params.id)
     return Restaurant.destroy({
         where: {id : restaurantId}
       })
