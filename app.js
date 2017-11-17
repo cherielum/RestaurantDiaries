@@ -93,8 +93,22 @@ app.delete('/restaurants', function(req, res) {
         where: {name: any}
       })
       .then(success => [
-        User.Restaurant().then(users => {
-            res.send(restaurants);
+        Restaurant.findall().then(restaurant => {
+            res.send(restaurant);
+        })
+
+      ])
+
+})
+
+app.delete('/restaurants:uid', function(req, res) {
+    let restaurantId = Number(request.params.id)
+    return Restaurant.destroy({
+        where: {id : restaurantId}
+      })
+      .then(success => [
+        Restaurant.findAll().then(restaurant => {
+            res.send(restaurant);
         })
 
       ])
