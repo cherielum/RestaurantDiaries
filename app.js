@@ -90,10 +90,10 @@ app.put ('/restaurants/:id', function(request, response){
 
 app.delete('/restaurants', function(req, res) {
     return Restaurant.destroy({
-        where: {name: any}
+        where: {}
       })
       .then(success => [
-        Restaurant.findall().then(restaurant => {
+        Restaurant.findAll().then(restaurant => {
             res.send(restaurant);
         })
 
@@ -101,10 +101,10 @@ app.delete('/restaurants', function(req, res) {
 
 })
 
-app.delete('/restaurants:uid', function(req, res) {
-    let restaurantId = Number(req.params.id)
+app.delete('/restaurants/:uid', function(req, res) {
+    let requestID = req.params.uid;
     return Restaurant.destroy({
-        where: {id : restaurantId}
+        where: {id: requestID}
       })
       .then(success => [
         Restaurant.findAll().then(restaurant => {
