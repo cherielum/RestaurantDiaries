@@ -15,17 +15,22 @@
 
 	<body>
 		
-		<span id = "goBackId"> <a href= "index.html" > <img src = "logo4.png"> </a></span>
+		<span id = "goBackId"> <a href= "index.html" > <img src = "logo4.png" id = "reviewLogo"> </a></span>
+		<a href = "notes.html" class= "button" id = "notesButton" > All Notes </a>
+
+		<a href = "review.html" class= "button" id = "newNoteButton" > New Note </a>
+
 		<div class="container2">
 
-
-
-			<h1 id = "reviewPageTitle"> Your Notes </h1>
+			<br />
+			<br />
+			<br />
+			<h1 id = "reviewPageTitle"> </h1>
 
 			<form id = "noteBox">
 
 				   <div class="form-group">
-			    <label for="exampleFormControlTextarea1"> New Restaurant </label>
+			    <label for="exampleFormControlTextarea1"> New Note </label>
 			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Example: This is probably my favorite fast food chain ever. I brought a date here for the first time and she loved it!! If we don't make it I have to make a note that this is definitely the perfect place for a first date. Not only is it cheap, it is delicious and the atmosphere is cozy. Today I only spent $10 on two burritos. That's bomb! Would come back with friends too. But don't come on a weekend around 2PM. It is too crowded. "></textarea>
 			  </div>
 
@@ -63,21 +68,21 @@
 			   <div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Category</label>
 			    <div class="col-sm-10">
-			      <input type="email" class="form-control" id="inputEmail3" placeholder="Korean, Japanese, Mexican, Turkish, French...">
+			      <input type="text" class="form-control" id="inputEmail3" placeholder="Korean, Japanese, Mexican, Turkish, French...">
 			    </div>
 			  </div>
 
 			   <div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Type</label>
 			    <div class="col-sm-10">
-			      <input type="email" class="form-control" id="inputEmail3" placeholder="Fast Food, Fast Casual, Fine Dining...">
+			      <input type="text" class="form-control" id="inputEmail3" placeholder="Fast Food, Fast Casual, Fine Dining...">
 			    </div>
 			  </div>
 
 			    <div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Last Visited</label>
 			    <div class="col-sm-10">
-			      <input type="email" class="form-control" id="inputEmail3" placeholder="Year-Month-Day">
+			      <input type="text" class="form-control" id="inputEmail3" placeholder="Year-Month-Day">
 			    </div>
 			  </div>
 
@@ -105,7 +110,7 @@
 
 			
 			  
-			  <button class="btn btn-success" type="submit">Submit Notes</button>
+			  <button class="btn btn-success" type="submit" href = "notes.html" >Submit Note</button>
 			</form>
 
 
