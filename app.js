@@ -73,7 +73,7 @@ const Restaurant = restaurant.define('restaurant', {
     cleanBathroom: true,
     city: 'Atlanta',
     state: 'GA',
-    zipcode: '30326'
+    zipcode: '30326',
   });
 });
 
