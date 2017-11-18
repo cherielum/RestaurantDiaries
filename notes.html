@@ -14,8 +14,8 @@
 
 		<link rel = "stylesheet" href = "index.css">
 
-
-		<script src = "index.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script src = "notes.js"></script>
 
 	</head>
 
@@ -27,19 +27,24 @@
 		<a href = "notes.html" class= "button" id = "notesButton" > All Notes </a>
 		<a href = "review.html" class= "button" id = "newNoteButton" > New Note </a>
 
-		<table class="table">
-			<thead>
-      <tr>
-        <th>Name</th>
-				<th>City,State Zip</th>
-        <th>Rating</th>
-        <th>Category</th>
-				<th>Type</th>
-				<th>Review</th>
-        <th>Clean Bathroom?</th>
-        <th>Would you go back?</th>
-      </tr>
-    </thead>
-		</table>
+		<div class="container3">
+			<table class="table" style="margin-top:100px;">
+				<thead>
+	      <tr>
+	        <th>Name</th>
+					<th>City, State & Zip</th>
+	        <th>Rating</th>
+	        <th>Category</th>
+					<th>Type</th>
+					<th>Review</th>
+	        <th>Clean Bathroom?</th>
+	        <th>Would you go back?</th>
+					<th>Actions</th>
+	      </tr>
+	    </thead>
+			<tbody id="tableBody">
+			</tbody>
+			</table>
+		</div>
 	</body>
 </html>

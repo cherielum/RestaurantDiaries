@@ -56,7 +56,7 @@ const Restaurant = restaurant.define('restaurant', {
     },
     state: {
       type: Sequelize.STRING
-    }
+    },
     zipcode: {
       type: Sequelize.STRING
     }
