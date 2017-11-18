@@ -16,7 +16,7 @@ img {
 	height: 60px;
 }
 .container{
-	background-image:url('image1.jpeg');
+	background-image:url('./assets/image1.jpeg');
 	background-size: 1700px;
 	background-position: center; /*brings to center*/
 	height: 100vh;
@@ -86,7 +86,7 @@ REVIEW page
 }
 
 .container2 {
-	background-image:url('image1.jpeg');
+	background-image:url('./assets/image1.jpeg');
 	background-size: 1900px;
 	height: 102vh;
 	width: 100vw;
@@ -113,7 +113,7 @@ REVIEW page
 
 #newNoteButton {
 	position: absolute;
-	color: white; 
+	color: white;
 	margin-top: 30px;
 	margin-left: 1060px;
 }
@@ -129,12 +129,12 @@ NOTES page
 ===============================*/
 
 .container3 {
-	background-image:url('image1.jpeg');
+	background-image:url('./assets/image1.jpeg');
 	background-size: 1900px;
 	height: 100vh;
 	width: 100vw;
-	display:flex; 
-	flex-direction: column; 
+	display:flex;
+	flex-direction: column;
 	justify-content: left;
 	align-items: center;
 	text-align: center;
@@ -151,7 +151,7 @@ NOTES page
 
 #newNoteButton {
 	position: absolute;
-	color: white; 
+	color: white;
 	margin-top: 30px;
 	margin-left: 1060px;
 }
