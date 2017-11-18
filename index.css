@@ -43,6 +43,10 @@ h1#title {
 	font-size: 20px;
 }
 
+.button {
+	margin: 10px;
+}
+
 .container .button {
 	font-size: 17px;
 	text-decoration: none;
@@ -84,7 +88,7 @@ REVIEW page
 .container2 {
 	background-image:url('image1.jpeg');
 	background-size: 1900px;
-	height: 100vh;
+	height: 102vh;
 	width: 100vw;
 	display:flex;
 	flex-direction: column;
@@ -98,4 +102,62 @@ REVIEW page
 #goBackId{
 	position: absolute;
 	color: #A4E869; //yellow-lime
+}
+
+#notesButton {
+	position: absolute;
+	color: white;
+	margin-left: 1170px;
+	margin-top: 30px;
+}
+
+#newNoteButton {
+	position: absolute;
+	color: white; 
+	margin-top: 30px;
+	margin-left: 1060px;
+}
+
+#reviewLogo {
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+/*==============================
+NOTES page
+===============================*/
+
+.container3 {
+	background-image:url('image1.jpeg');
+	background-size: 1900px;
+	height: 100vh;
+	width: 100vw;
+	display:flex; 
+	flex-direction: column; 
+	justify-content: left;
+	align-items: center;
+	text-align: center;
+	padding: 20px; so when screen is small it has space on side
+	padding-top: 10%;
+}
+
+#notesButton {
+	position: absolute;
+	color: white;
+	margin-left: 1170px;
+	margin-top: 30px;
+}
+
+#newNoteButton {
+	position: absolute;
+	color: white; 
+	margin-top: 30px;
+	margin-left: 1060px;
+}
+
+#reviewLogo {
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 20px;
 }

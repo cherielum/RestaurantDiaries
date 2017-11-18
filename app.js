@@ -50,6 +50,15 @@ const Restaurant = restaurant.define('restaurant', {
     },
      cleanBathroom: {
       type: Sequelize.BOOLEAN
+    },
+    city: {
+      type: Sequelize.STRING
+    },
+    state: {
+      type: Sequelize.STRING
+    }
+    zipcode: {
+      type: Sequelize.STRING
     }
   });
 
@@ -63,7 +72,10 @@ const Restaurant = restaurant.define('restaurant', {
     category: 'Fast Casual',
     type: 'Mexican',
     lastVisted: '2017-11-13',
-    cleanBathroom: true
+    cleanBathroom: true,
+    city: 'Atlanta',
+    state: 'GA',
+    zipcode: '30326',
   });
 });
 
@@ -92,10 +104,10 @@ app.put ('/restaurants/:id', function(request, response){
 
 app.delete('/restaurants', function(req, res) {
     return Restaurant.destroy({
-        where: {name: any}
+        where: {}
       })
       .then(success => [
-        Restaurant.findall().then(restaurant => {
+        Restaurant.findAll().then(restaurant => {
             res.send(restaurant);
         })
 
@@ -103,10 +115,14 @@ app.delete('/restaurants', function(req, res) {
 
 })
 
-app.delete('/restaurants:uid', function(req, res) {
-    let restaurantId = Number(req.params.id)
+app.delete('/restaurants/:uid', function(req, res) {
+    let requestID = req.params.uid;
+    if (isNaN(requestID)) {
+      throw ("NaN!");
+
+    }
     return Restaurant.destroy({
-        where: {id : restaurantId}
+        where: {id: requestID}
       })
       .then(success => [
         Restaurant.findAll().then(restaurant => {
