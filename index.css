@@ -7,7 +7,7 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 20px;
 	color: white;
-	line-height: 1.2; 
+	line-height: 1.2;
 	margin: 0px;
 }
 
@@ -21,8 +21,8 @@ img {
 	background-position: center; /*brings to center*/
 	height: 100vh;
 	width: 100vw;
-	display:flex; 
-	flex-direction: column; 
+	display:flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -45,7 +45,7 @@ h1#title {
 
 .container .button {
 	font-size: 17px;
-	text-decoration: none; 
+	text-decoration: none;
 	color: white;
 	border: white 1px solid;
 	padding: 15px 20px;
@@ -75,7 +75,7 @@ REVIEW page
 	size: 10px;
 }
 
-#noteBox{
+#newNoteForm{
 	border: white 1px solid;
 	padding: 15px 20px;
 	border-radius: 10px;
@@ -86,8 +86,8 @@ REVIEW page
 	background-size: 1900px;
 	height: 100vh;
 	width: 100vw;
-	display:flex; 
-	flex-direction: column; 
+	display:flex;
+	flex-direction: column;
 	justify-content: left;
 	align-items: center;
 	text-align: center;
