@@ -89,6 +89,26 @@ app.get ('/restaurants', function(request, response){
   });
 });
 
+app.post('/restaurants', function(request, response){
+ let newRestaurant = request.body;
+
+ Restaurant.create ({
+  name: newRestaurant.name,
+  rating: newRestaurant.rating,
+  review: newRestaurant.review,
+  wouldYouGoBack: newRestaurant.wouldYouGoBack,
+  category: newRestaurant.category,
+  type: newRestaurant.type,
+  lastVisited: newRestaurant.lastVisited,
+  cleanBathroom: newRestaurant.cleanBathroom,
+  city: newRestaurant.city,
+  state: newRestaurant.state,
+  zipcode: newRestaurant.zipcode
+  }).then(restaurant => {
+  response.json(restaurant.toJSON())
+  });
+});
+
 app.put ('/restaurants/:id', function(request, response){
   let restaurantId = Number(request.params.id)
 
