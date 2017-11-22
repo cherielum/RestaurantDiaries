@@ -17,7 +17,8 @@ app.use(cors());
 //RESTAURANT MODEL
 //=================
 
-const restaurant = new Sequelize('postgres://@localhost:5432/restaurant');
+// const restaurant = new Sequelize('postgres://@localhost:5432/restaurant');
+const restaurant = new Sequelize('http://localhost:3000/restaurants');
 
 restaurant.authenticate().then(() => {
     console.log('Connection has been established successfully.');
