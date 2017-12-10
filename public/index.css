@@ -9,6 +9,7 @@ body {
 	color: white;
 	line-height: 1.2;
 	margin: 0px;
+	background-color: #110b00;
 }
 
 
@@ -124,21 +125,26 @@ REVIEW page
 	margin-top: 20px;
 }
 
+#button-all-notes {
+	text-decoration: none; 
+	color: white;
+}
+
 /*==============================
 NOTES page
 ===============================*/
 
 .container3 {
 	background-color: #110b00;
-	background-size: 1900px;
-	height: 100vh;
-	width: 100vw;
+	background-size: 2000px;
+	height: auto;
+	
 	display:flex;
 	flex-direction: column;
 	justify-content: left;
 	align-items: center;
 	text-align: center;
-	padding: 20px; so when screen is small it has space on side
+	padding: 20px; 
 	padding-top: 10%;
 }
 
@@ -161,3 +167,4 @@ NOTES page
 	margin-left: 10px;
 	margin-top: 20px;
 }
+

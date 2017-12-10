@@ -24,9 +24,8 @@ $( document ).ready(function() {
         let colCleanBathroom = $('<td>'+ note.cleanBathroom +'</td>');
         let colWouldYouGoBack = $('<td>'+ note.wouldYouGoBack +'</td>');
 
-        let deleteButton = $('<button>Delete</button>');
+        let deleteButton = $('<button id="'+ note.id +'">Delete</button>');
         deleteButton.addClass('btn btn-danger');
-        deleteButton.attr('id', note.id);
         deleteButton.click(function(){
           $.ajax({
             type: "DELETE",
@@ -34,6 +33,8 @@ $( document ).ready(function() {
             dataType: 'json',
             success: function(data) {
                console.log('Successfully deleted!')
+               //removing parent row otherwise you just delete the button
+               deleteButton.parent().remove()
             },
             error: function() {
               console.log('Oops! There was an error!')
@@ -41,7 +42,8 @@ $( document ).ready(function() {
           });
         });
         let colActions = $('<td><button></button></td>');
-        $('#tableBody').append(tableRow).append(colName,colAddress,colRating,colCategory,colType,colReview,colCleanBathroom,colWouldYouGoBack,deleteButton);
+        $('#tableBody').append(tableRow)
+        tableRow.append(colName,colAddress,colRating,colCategory,colType,colReview,colCleanBathroom,colWouldYouGoBack,deleteButton);
 
       })
     };
