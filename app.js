@@ -13,18 +13,22 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(express.static('public'))
+
 //=================
 //RESTAURANT MODEL
 //=================
 
-const restaurant = new Sequelize('postgres://@localhost:5432/restaurant');
+// const restaurant = new Sequelize('postgres://@localhost:5432/restaurant');
+// const restaurant = new Sequelize('http://localhost:3000/restaurants');
+const restaurant = new Sequelize("postgres://Cherie:@localhost:5432/restaurant");
 
-restaurant.authenticate().then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+// restaurant.authenticate().then(() => {
+//     console.log('Connection has been established successfully.');
+//   })
+//   .catch(err => {
+//     console.error('Unable to connect to the database:', err);
+//   });
 
 const Restaurant = restaurant.define('restaurant', {
     name: {
@@ -62,9 +66,19 @@ const Restaurant = restaurant.define('restaurant', {
     }
   });
 
-  Restaurant.sync().then(() => {
+  // const Restaurant = restaurant.define('restaurant', {
+  //   name: {
+  //     type: Sequelize.STRING
+  //   },
+  //   rating: {
+  //     type: Sequelize.INTEGER
+  //   }
+  // });
+
+  // force: true will drop the table if it already exists
+  Restaurant.sync({force: false}).then(() => {
   // Table created
-  return Restaurant.create({
+  /* return Restaurant.create({
     name: 'Chipotle',
     rating: '3',
     review: 'The rice bowl rocks!!! ',
@@ -76,7 +90,7 @@ const Restaurant = restaurant.define('restaurant', {
     city: 'Atlanta',
     state: 'GA',
     zipcode: '30326',
-  });
+  }); */
 });
 
 //=================
@@ -84,7 +98,8 @@ const Restaurant = restaurant.define('restaurant', {
 //=================
 
 app.get ('/restaurants', function(request, response){
-  Restaurant.findAll().then(restaurants => {
+  Restaurant.findAll({order: [['createdAt', 'DESC']]}).then(restaurants => {
+    console.log(restaurants);
     response.send(restaurants);
   });
 });

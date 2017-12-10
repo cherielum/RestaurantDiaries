@@ -6,7 +6,7 @@
 	  <link rel="stylesheet" type="text/html" href="index.html">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<link rel = "stylesheet" href = "index.css">
@@ -36,7 +36,7 @@
 
 				<div class="form-group">
 			    <label for="newNoteText"> New Restaurant </label>
-			    <textarea class="form-control" id="newNoteText" rows="5" placeholder="Example: This is probably my favorite fast food chain ever. I brought a date here for the first time and she loved it!! If we don't make it I have to make a note that this is definitely the perfect place for a first date. Not only is it cheap, it is delicious and the atmosphere is cozy. Today I only spent $10 on two burritos. That's bomb! Would come back with friends too. But don't come on a weekend around 2PM. It is too crowded. "></textarea>
+			    <textarea class="form-control" id="newNoteText" name="review" rows="7" cols = "" placeholder="Example: This is probably my favorite fast food chain ever. I brought a date here for the first time and she loved it!! If we don't make it I have to make a note that this is definitely the perfect place for a first date. Not only is it cheap, it is delicious and the atmosphere is cozy. Today I only spent $10 on two burritos. That's bomb! Would come back with friends too. But don't come on a weekend around 2PM. It is too crowded. "></textarea>
 
 			  </div>
 
@@ -44,27 +44,27 @@
 			  <div class="row" id = "noteTexts">
 			    <div class="col-md-12 mb-3" id = "restaurantName">
 			      <label for="newNoteRestaurant"></label>
-			      <input type="text" class="form-control" id="newNoteRestaurant" placeholder="Restaurant Name" value="Restaurant Name" required>
+			      <input type="text" class="form-control" id="newNoteRestaurant" name="name" placeholder="Restaurant Name" value="" required>
 			    </div>
 			  </div>
 			  <div class="row" id = "noteTexts">
 			    <div class="col-md-6 mb-3">
 			      <label for="newNoteCity"></label>
-			      <input type="text" class="form-control" id="newNoteCity" placeholder="City" required>
+			      <input type="text" class="form-control" id="newNoteCity" name="city" placeholder="City" required>
 			      <div class="invalid-feedback">
 			        Please provide a valid city.
 			      </div>
 			    </div>
 			    <div class="col-md-3 mb-3" id = "noteTexts">
 			      <label for="newNoteState"></label>
-			      <input type="text" class="form-control" id="newNoteState" placeholder="State" required>
+			      <input type="text" class="form-control" id="newNoteState" name="state" placeholder="State" required>
 			      <div class="invalid-feedback">
 			        Please provide a valid state.
 			      </div>
 			    </div>
 			    <div class="col-md-3 mb-3" id = "noteTexts">
 			      <label for="newNoteZip"></label>
-			      <input type="text" class="form-control" id="newNoteZip" placeholder="Zip" required>
+			      <input type="text" class="form-control" id="newNoteZip" name="zipcode" placeholder="Zip" required>
 			      <div class="invalid-feedback">
 			        Please provide a valid zip.
 			      </div>
@@ -74,26 +74,26 @@
 			   <div class="form-group row">
 			    <label for="newNoteType" class="col-sm-2 col-form-label">Category</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="newNoteType" placeholder="Korean, Japanese, Mexican, Turkish, French...">
+			      <input type="text" class="form-control" id="newNoteType" name="category" placeholder="Korean, Japanese, Mexican, Turkish, French...">
 			    </div>
 			  </div>
 
 			   <div class="form-group row">
 			    <label for="newNoteCategory" class="col-sm-2 col-form-label">Type</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="newNoteCategory" placeholder="Fast Food, Fast Casual, Fine Dining...">
+			      <input type="text" class="form-control" id="newNoteCategory" name= "type" placeholder="Fast Food, Fast Casual, Fine Dining...">
 			    </div>
 			  </div>
 
 			  <div class="form-group row">
 			    <label for="newNoteLastVisited" class="col-sm-2 col-form-label">Last Visited</label>
 			    <div class="col-sm-10">
-			      <input type="date" class="form-control" id="newNoteLastVisited" placeholder="Year-Month-Day">
+			      <input type="date" class="form-control" id="newNoteLastVisited" name = "lastVisited" placeholder="Year-Month-Day">
 			    </div>
 			  </div>
 
 			  <label class="mr-sm-2" for="newNoteRating">Rate</label>
-			  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="newNoteRating">
+			  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="newNoteRating" name = "rating">
 			    <option value="1">Five</option>
 			    <option value="2">Four</option>
 			    <option value="3">Three</option>
@@ -103,17 +103,18 @@
 			  </select>
 
 			  <label class="mr-sm-2" for="newNoteReturnTo">Return?</label>
-			  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="newNoteReturnTo">
+			  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="newNoteReturnTo" name ="wouldYouGoBack">
 			    <option value="1">Yes</option>
-			    <option value="2">No</option>
+			    <option value="0">No</option>
 			  </select>
 
 			  <label class="mr-sm-2" for="newNoteCleanBathroom">Bathroom?</label>
-			  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="newNoteCleanBathroom">
+			  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="newNoteCleanBathroom" name = "cleanBathroom">
 			    <option value="1">Yes</option>
-			    <option value="2">No</option>
+			    <option value="0">No</option>
 			  </select>
-			  <button class="btn btn-success" type="submit" href = "notes.html" >Submit Note</button>
+				<button class="btn btn-success success" type="submit">Submit Note</a></button>
+		
 			</form>
 
 
